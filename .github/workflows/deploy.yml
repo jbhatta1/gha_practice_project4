@@ -6,11 +6,13 @@ jobs:
         steps:
             - name: Checkout project
               uses: actions/checkout@v2
-            - name: Install packages
+            - name: Install dependencies
               run: npm install
             - name: Run Lint
-              run: yarn run eslint --ext .jsx --fix src
+              run: npm run lint
             - name: Test project
               run: npm test
             - name: Build project
               run: npm run build
+            - name: Deploy code
+              run: echo "Deploying code"
