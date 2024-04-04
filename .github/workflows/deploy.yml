@@ -1,0 +1,14 @@
+name: Deploy Workflow
+on: push
+jobs:
+    buildjob:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout project
+              uses: actions/checkout@v2
+            - name: Run Lint
+              run: eslint --ext .jsx --fix src
+            - name: Test project
+              run: vitest run
+            - name: Build project
+              run: vite build

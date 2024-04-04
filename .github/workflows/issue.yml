@@ -1,0 +1,8 @@
+name: Display Issues
+on: issues
+jobs:
+    showissues:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Show issues
+              run: echo ${{ github.action_status }}
