@@ -9,7 +9,7 @@ jobs:
             - name: Install packages
               run: npm install
             - name: Run Lint
-              run: eslint --ext .jsx --fix src
+              run: yarn run eslint --ext .jsx --fix src
             - name: Test project
               run: vitest run
             - name: Build project
